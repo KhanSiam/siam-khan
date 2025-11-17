@@ -1,0 +1,122 @@
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f6f8f2;
+
+    margin: 0;
+
+    padding: 0;
+
+    text-align: center;
+
+}
+
+header {
+
+   /* Header */
+
+header {
+
+    background-color: #004aad;
+
+    color: white;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px; /* space between logo and text */
+
+}
+
+.aiub-logo {
+
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    padding: 5px;
+
+}
+
+.header-text h1, 
+
+.header-text h2, 
+
+.header-text h3 {
+
+    margin: 5px 0;
+
+}
+}
+
+.profile-box {
+
+    background-color: #ffffff;
+
+    width: 400px;
+
+    margin: 40px auto;
+
+    border: 2px solid #ddd;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.student-photo {
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    border: 3px solid #004aad;
+
+}
+
+.student-name {
+
+    color: #004aad;
+
+    margin-top: 15px;
+
+}
+
+.bio {
+
+    font-size: 0.95em;
+
+    color: #555;
+
+    margin-top: 10px;
+
+    line-height: 1.5em;
+
+}
+
+footer {
+
+    background-color: #004aad;
+
+    color: white;
+
+    padding: 10px 0;
+
+    margin-top: 40px;
+
+}
