@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Two Article Comment Systems</title>
+<style>
+body{font-family:Arial;margin:40px;background:#f8f8f8}
+.section{background:#fff;padding:20px;border-radius:6px;box-shadow:0 0 4px rgba(0,0,0,0.1);max-width:900px;margin-bottom:50px}
+.stats{display:flex;justify-content:space-between;margin-bottom:20px;font-weight:bold;font-size:1.1em}
+label{font-weight:bold;display:block;margin-top:10px}
+input,textarea{width:100%;padding:8px;margin-top:5px;border-radius:4px;border:1px solid #bbb;font-size:14px}
+.error{color:red;font-size:0.9em}
+.stars span{font-size:24px;cursor:pointer;color:#ccc}
+.stars .selected{color:gold}
+.comment{background:#f0f0f0;padding:12px;margin-top:15px;border-radius:6px}
+.submit-btn{background:#007bff;color:white;padding:10px 20px;border:none;margin-top:15px;cursor:pointer;font-size:16px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<h2>Article 1: Importance of Trees in Urban Environments</h2>
+<p>
+Trees help cool the planet by sucking in and storing harmful greenhouse gases like carbon dioxide 
+into their trunks, branches, and leaves — and releasing oxygen back into the atmosphere. In cities, 
+trees can reduce ambient temperatures by up to 8° Celsius. With more than 50% of the world’s 
+population living in cities — a number expected to increase to 66% by the year 2050 — pollution 
+and overheating are becoming a real threat. Fortunately, a mature tree can absorb an average of 
+22lbs of carbon dioxide per year, making cities a healthier, safer place to live.
+</p>
+
+<div class="section" id="section1">
+    <div class="stats">
+        <div>Total Comments: <span id="total1">0</span></div>
+        <div>Average Rating: <span id="avg1">0</span></div>
+    </div>
+
+    <form id="form1">
+        <label>Name *</label>
+        <input type="text" id="name1">
+        <div id="nameErr1" class="error"></div>
+
+        <label>Email (Optional)</label>
+        <input type="text" id="email1">
+        <div id="emailErr1" class="error"></div>
+
+        <label>Comment *</label>
+        <textarea id="comment1" rows="4"></textarea>
+        <div id="commentErr1" class="error"></div>
+
+        <label>Rating (Optional)</label>
+        <div class="stars" id="stars1">
+            <span data-value="1">&#9733;</span>
+            <span data-value="2">&#9733;</span>
+            <span data-value="3">&#9733;</span>
+            <span data-value="4">&#9733;</span>
+            <span data-value="5">&#9733;</span>
+        </div>
+        <div id="rateDisp1"></div>
+
+        <button type="submit" class="submit-btn">Submit Comment</button>
+    </form>
+
+    <div id="list1"></div>
+</div>
+
+
+
+<h2>Article 2: Traffic Congestion in Dhaka</h2>
+<p>
+There was a time when commuters suffered traffic congestion only on the main city streets, but now it starts right from one's doorstep. Traffic jam has turned daily trips into nightmares. According to a World Bank report, in the last 10 years, the average traffic speed in Dhaka has dropped from 21 kilometres per hour (kmph) to 7 kmph, and by 2035, the speed might drop to 4kmph, which is slower than the walking speed. Another study, commissioned by Brac Institute of Government and Development, says traffic congestion in Dhaka eats up around 5 million working hours every day and costs the country USD 11.4 billion every year. The financial loss is a calculation of the cost of time lost in traffic congestion and the money spent on operating vehicles for the extra hours.
+</p>
+<p>
+Researchers say dealing with heavy traffic can cause serious physical and mental problems, including stress and aggression resulting in road rage. A survey by the Passengers' Welfare Association revealed that at least 87 percent of buses and minibuses violate traffic rules. Every day at least 64 people are losing their life while 150 others are getting injured across the country. This year, between January 1 and April 20, 1,841 people were killed and 5,477 more injured. Of those injured, 288 were maimed. Last year, around 7,397 people were killed and 16,193 others injured; among the injured, 1,722 were maimed for life. In addition to pain, suffering and loss of life, road accidents have a significant economic and social cost which are not easy to measure in monetary terms.
+</p>
+<p>
+All the megacities in the world suffer from traffic jam at certain hours of the day. But what we have in Dhaka is not traffic jam, it is total traffic chaos and mismanagement. In recent times, the government has taken some positive steps such as widening the roads, expansion of footpaths, and building flyovers and overpasses but yet, there was no improvement in the traffic situation. Cities are the main engines of our economic growth. Even though Dhaka is only one percent of the country's total area, its contribution to GDP is 36 percent, and it has created 44 percent of the country's total employment. Considering the economic potential of Dhaka, let us review its existing traffic situation and also possible solutions.
+</p>
+
+<div class="section" id="section2">
+    <div class="stats">
+        <div>Total Comments: <span id="total2">0</span></div>
+        <div>Average Rating: <span id="avg2">0</span></div>
+    </div>
+
+    <form id="form2">
+        <label>Name *</label>
+        <input type="text" id="name2">
+        <div id="nameErr2" class="error"></div>
+
+        <label>Email (Optional)</label>
+        <input type="text" id="email2">
+        <div id="emailErr2" class="error"></div>
+
+        <label>Comment *</label>
+        <textarea id="comment2" rows="4"></textarea>
+        <div id="commentErr2" class="error"></div>
+
+        <label>Rating (Optional)</label>
+        <div class="stars" id="stars2">
+            <span data-value="1">&#9733;</span>
+            <span data-value="2">&#9733;</span>
+            <span data-value="3">&#9733;</span>
+            <span data-value="4">&#9733;</span>
+            <span data-value="5">&#9733;</span>
+        </div>
+        <div id="rateDisp2"></div>
+
+        <button type="submit" class="submit-btn">Submit Comment</button>
+    </form>
+
+    <div id="list2"></div>
+</div>
+
+
+<script>
+function setup(section, form, name, email, comment, list, stars, display, total, avg, nameErr, emailErr, commentErr){
+    let comments=[],ratings=[],selected=0
+    document.querySelectorAll(stars+" span").forEach(s=>{
+        s.addEventListener("click",function(){
+            selected=parseInt(this.getAttribute("data-value"))
+            updateStars()
+            document.querySelector(display).innerText="Selected Rating: "+selected
+        })
+    })
+    function updateStars(){
+        document.querySelectorAll(stars+" span").forEach(s=>{
+            let v=parseInt(s.getAttribute("data-value"))
+            s.classList.toggle("selected",v<=selected)
+        })
+    }
+    document.querySelector(form).addEventListener("submit",function(e){
+        e.preventDefault()
+        let n=document.querySelector(name).value.trim()
+        let em=document.querySelector(email).value.trim()
+        let ct=document.querySelector(comment).value.trim()
+        let err=false
+        if(n.length<2||n.length>50){document.querySelector(nameErr).innerText="Name should be between 2 and 50 characters";err=true}else document.querySelector(nameErr).innerText=""
+        if(em!==""&&!em.includes("@")){document.querySelector(emailErr).innerText="Please enter a valid email address";err=true}else document.querySelector(emailErr).innerText=""
+        if(ct.length<10||ct.length>500){document.querySelector(commentErr).innerText="Comment should between 10 and 500 characters";err=true}else document.querySelector(commentErr).innerText=""
+        if(err)return
+        comments.push({n,ct,r:selected})
+        if(selected>0)ratings.push(selected)
+        displayComments()
+        updateStats()
+        document.querySelector(form).reset()
+        selected=0
+        updateStars()
+        document.querySelector(display).innerText=""
+    })
+    function displayComments(){
+        let c=document.querySelector(list)
+        c.innerHTML=""
+        comments.forEach(x=>{
+            let d=document.createElement("div")
+            d.classList.add("comment")
+            d.innerHTML="<strong>"+x.n+"</strong><br>"+x.ct+"<br>"+(x.r>0?"Rating: "+x.r+" ⭐":"")
+            c.appendChild(d)
+        })
+    }
+    function updateStats(){
+        document.querySelector(total).innerText=comments.length
+        if(ratings.length>0){
+            let a=(ratings.reduce((a,b)=>a+b,0)/ratings.length).toFixed(1)
+            document.querySelector(avg).innerText=a
+        }else document.querySelector(avg).innerText="0"
+    }
+}
+
+setup("#section1","#form1","#name1","#email1","#comment1","#list1","#stars1","#rateDisp1","#total1","#avg1","#nameErr1","#emailErr1","#commentErr1")
+setup("#section2","#form2","#name2","#email2","#comment2","#list2","#stars2","#rateDisp2","#total2","#avg2","#nameErr2","#emailErr2","#commentErr2")
+</script>
+
+</body>
+</html>
+
