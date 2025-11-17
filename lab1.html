@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donation Form</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        table { width: 700px; border-collapse: collapse; }
+        td { padding: 6px; vertical-align: top; }
+        input, select, textarea { width: 250px; padding: 5px; }
+        .section-title { font-size: 18px; font-weight: bold; padding: 10px 0; }
+        textarea { width: 400px; height: 80px; }
+        .options input { width: auto; }
+        .small { width: 80px; }
+        .btns button { padding: 7px 20px; font-size: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="section-title">Donor Information</div>
+
+<table>
+<tr>
+    <td>First Name*</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>Last Name*</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>Company</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>Address 1*</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>Address 2</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>City*</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>State*</td>
+    <td>
+        <select>
+            <option>Select a State</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>Zip Code*</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>Country*</td>
+    <td>
+        <select>
+            <option>Select a Country</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>Phone</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>Fax</td>
+    <td><input type="text"></td>
+</tr>
+<tr>
+    <td>Email*</td>
+    <td><input type="email"></td>
+</tr>
+
+<tr>
+    <td>Donation Amount*</td>
+    <td class="options">
+        <label><input type="radio" name="amt"> None</label>
+        <label><input type="radio" name="amt"> $50</label>
+        <label><input type="radio" name="amt"> $75</label>
+        <label><input type="radio" name="amt"> $100</label>
+        <label><input type="radio" name="amt"> $250</label>
+        <label><input type="radio" name="amt"> Other</label>
+    </td>
+</tr>
+
+<tr>
+    <td>Other Amount $</td>
+    <td><input type="text"></td>
+</tr>
+
+<tr>
+    <td>Recurring Donation</td>
+    <td>
+        <label><input type="checkbox"> I am interested in giving on a regular basis.</label><br><br>
+        Monthly Credit Card $ <input type="text" class="small"> For
+        <input type="text" class="small"> Months
+    </td>
+</tr>
+</table>
+
+<br>
+
+<div class="section-title">Honorarium and Memorial Donation Information</div>
+
+<table>
+<tr>
+    <td width="200">I would like to make this donation</td>
+    <td>
+        <label><input type="radio" name="don"> To Honor</label>
+        <label><input type="radio" name="don"> In Memory of</label>
+    </td>
+</tr>
+
+<tr>
+    <td>Name</td>
+    <td><input type="text"></td>
+</tr>
+
+<tr>
+    <td>Acknowledge Donation to</td>
+    <td><input type="text"></td>
+</tr>
+
+<tr>
+    <td>Address</td>
+    <td><input type="text"></td>
+</tr>
+
+<tr>
+    <td>City</td>
+    <td><input type="text"></td>
+</tr>
+
+<tr>
+    <td>State</td>
+    <td>
+        <select>
+            <option>Select a State</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Zip</td>
+    <td><input type="text"></td>
+</tr>
+</table>
+
+<br>
+
+<div class="section-title">Additional Information</div>
+
+<table>
+<tr>
+    <td colspan="2">Please enter how your name should appear in publications:</td>
+</tr>
+
+<tr>
+    <td colspan="2"><input type="text" style="width:400px"></td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        <label><input type="checkbox"> I would like my gift to remain anonymous.</label><br>
+        <label><input type="checkbox"> My employer offers a matching gift program.</label><br>
+        <label><input type="checkbox"> Save cost by not mailing a thank you letter.</label>
+    </td>
+</tr>
+
+<tr>
+    <td>Comments</td>
+    <td><textarea></textarea></td>
+</tr>
+
+<tr>
+    <td>How may we contact you?</td>
+    <td>
+        <label><input type="checkbox"> E-mail</label><br>
+        <label><input type="checkbox"> Postal Mail</label><br>
+        <label><input type="checkbox"> Telephone</label><br>
+        <label><input type="checkbox"> Fax</label>
+    </td>
+</tr>
+
+<tr>
+    <td>Receive newsletters by:</td>
+    <td>
+        <label><input type="checkbox"> E-mail</label><br>
+        <label><input type="checkbox"> Postal Mail</label>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2">
+        <label><input type="checkbox"> I would like information about volunteering.</label>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2" class="btns">
+        <button type="reset">Reset</button>
+        <button type="submit">Continue</button>
+    </td>
+</tr>
+
+</table>
+
+</body>
+</html>
